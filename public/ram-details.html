@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta information for character encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAM Usage Details</title>
+
+    <style>
+        /* General styling for the body */
+        body {
+            font-family: Arial, sans-serif; /* Default font */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            background-color: #0f2040; /* Dark blue background for contrast */
+            color: white; /* White text for readability */
+        }
+
+        /* Styling for the back button */
+        .back-button {
+            position: absolute; /* Position at the top-left corner */
+            top: 20px; /* Distance from the top */
+            left: 20px; /* Distance from the left */
+            background-color: #0066CC; /* Blue background */
+            color: white; /* White text */
+            padding: 10px 15px; /* Padding for better clickability */
+            text-decoration: none; /* Remove underline from link */
+            border-radius: 5px; /* Rounded corners for modern design */
+        }
+
+        /* Hover effect for the back button */
+        .back-button:hover {
+            background-color: #45a049; /* Change background color to green */
+        }
+
+        /* Main container for the page content */
+        .container {
+            text-align: center; /* Center align the text */
+            margin: 50px auto; /* Center container with vertical spacing */
+            max-width: 800px; /* Limit the maximum width */
+        }
+
+        /* Styling for the list container */
+        .list-container {
+            margin-top: 20px; /* Spacing above the list container */
+            background-color: #1c2a3f; /* Slightly lighter background for content */
+            padding: 20px; /* Inner padding for spacing */
+            border-radius: 10px; /* Rounded corners */
+            text-align: left; /* Left-align the content */
+        }
+
+        /* Remove default styling for lists */
+        .list-container ul {
+            list-style: none; /* Remove bullets */
+            padding: 0; /* Remove default padding */
+        }
+
+        /* Styling for each list item */
+        .list-container ul li {
+            padding: 5px; /* Inner padding for spacing */
+            border-bottom: 1px solid #2d3f57; /* Divider line between items */
+        }
+
+        /* Remove the bottom border for the last list item */
+        .list-container ul li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Back button to navigate back to the Engineers and Developers page -->
+    <a href="/engineers-and-developers.html" class="back-button">Back</a>
+
+    <!-- Main container for the page content -->
+    <div class="container">
+        <h1>RAM Usage Details</h1> <!-- Page title -->
+
+        <!-- List container for displaying RAM-intensive programs -->
+        <div class="list-container">
+            <h2>Most RAM-Intensive Programs</h2> <!-- Section title -->
+            <ul id="ramProgramsList">
+                <li>Loading...</li> <!-- Placeholder content for dynamic data -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- External JavaScript file for functionality -->
+    <script src="ram-details.js"></script>
+</body>
+</html>

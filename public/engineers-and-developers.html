@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineers and Developers</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* General styling for a dark-themed dashboard */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0f2040;
+            color: white;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .chart-container, .list-container {
+            background-color: #1c2a3f;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .chart-container h2, .list-container h2 {
+            margin-bottom: 15px;
+        }
+
+        .chart-container canvas {
+            max-width: 100%;
+            height: 300px;
+        }
+
+        .list-container ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+
+        .list-container ul li {
+            padding: 5px;
+            border-bottom: 1px solid #2d3f57;
+        }
+
+        .list-container ul li:last-child {
+            border-bottom: none;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #0066CC;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .back-button:hover {
+            background-color: #45a049;
+        }
+
+        .more-button, .details-button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #0066CC;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+
+        .details-button {
+            display: block;
+            margin: 10px auto 0;
+        }
+
+        .more-button:hover, .details-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.location.href='/index.html'">Back to User Select</button>
+    <h1>Engineers and Developers Dashboard</h1>
+    <div class="container">
+        <!-- GPU Usage Chart -->
+        <div class="chart-container">
+            <h2>GPU Usage</h2>
+            <canvas id="gpuUsageChart"></canvas>
+            <p id="gpuName" style="margin-top: 10px; font-weight: bold;"></p>
+            <p id="gpuErrorMessage" class="error-message"></p>
+            <button class="more-button" onclick="showModal('gpu')">More</button>
+        </div>
+
+        <!-- CPU Usage Chart -->
+        <div class="chart-container">
+            <h2>CPU Usage</h2>
+            <canvas id="cpuUsageChart"></canvas>
+            <button class="more-button" onclick="showModal('cpu')">More</button>
+            <button class="details-button" onclick="window.location.href='/cpu-details.html'">CPU Details</button>
+        </div>
+
+        <!-- RAM Usage Chart -->
+        <div class="chart-container">
+            <h2>RAM Usage</h2>
+            <canvas id="ramUsageChart"></canvas>
+            <button class="more-button" onclick="showModal('ram')">More</button>
+            <button class="details-button" onclick="window.location.href='/ram-details.html'">RAM Details</button>
+        </div>
+
+        <!-- Battery Wear Chart -->
+        <div class="chart-container">
+            <h2>Battery Wear</h2>
+            <canvas id="batteryChart"></canvas>
+            <button class="more-button" onclick="showModal('battery')">More</button>
+        </div>
+
+        <!-- Disk Space Usage Chart -->
+        <div class="chart-container">
+            <h2>Disk Space Usage</h2>
+            <canvas id="diskSpaceChart"></canvas>
+            <button class="more-button" onclick="showModal('diskSpace')">More</button>
+        </div>
+
+        <!-- Lists -->
+        <div class="list-container">
+            <h2>Top 5 Largest Applications</h2>
+            <ul id="largestAppsList">
+                <li>Loading...</li>
+            </ul>
+        </div>
+
+        <div class="list-container">
+            <h2>Top 5 Largest Documents</h2>
+            <ul id="largestDocumentsList">
+                <li>Loading...</li>
+            </ul>
+        </div>
+
+        <div class="list-container">
+            <h2>Top 5 Largest Downloads</h2>
+            <ul id="largestDownloadsList">
+                <li>Loading...</li>
+            </ul>
+        </div>
+    </div>
+    <script src="engineers-and-developers.js"></script>
+</body>
+</html>

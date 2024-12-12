@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character encoding and viewport for responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Owner / Content Creator</title>
+
+    <!-- Chart.js for creating charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        /* Styling for the body, ensuring a dark theme with clean, modern aesthetics */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0f2040;
+            color: white;
+        }
+
+        /* Styling for headings */
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        /* Grid layout for dashboard containers */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+
+        /* Individual chart and list container styling */
+        .chart-container, .list-container {
+            background-color: #1c2a3f;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Styling for charts */
+        .chart-container canvas {
+            max-width: 100%;
+            height: 300px;
+        }
+
+        /* Button styling */
+        .more-button, .details-button, .back-button, .close-button {
+            background-color: #0066CC;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px; /* Add spacing for buttons */
+        }
+
+        .details-button {
+            display: block; /* Ensure details button is displayed below "More" button */
+            margin: 10px auto 0; /* Center the button horizontally */
+        }
+
+        /* Modal (popup) styling */
+        .modal {
+            display: none; /* Hidden by default, shown dynamically */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000; /* Ensure it appears above all content */
+            background-color: #1c2a3f;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Button to navigate back to the user selection screen -->
+    <button class="back-button" onclick="window.location.href='/index.html'">Back to User Select</button>
+    <h1>Business Owner / Content Creator Dashboard</h1>
+
+    <div class="container">
+        <!-- Battery Wear Chart -->
+        <div class="chart-container">
+            <h2>Battery Wear</h2>
+            <canvas id="batteryChart"></canvas> <!-- Placeholder for the battery chart -->
+            <button class="more-button" onclick="showModal('battery')">More</button> <!-- Button to open modal -->
+        </div>
+
+        <!-- Disk Space Chart -->
+        <div class="chart-container">
+            <h2>Disk Space Usage</h2>
+            <canvas id="diskSpaceChart"></canvas>
+            <button class="more-button" onclick="showModal('diskSpace')">More</button>
+        </div>
+
+        <!-- CPU Usage Chart -->
+        <div class="chart-container">
+            <h2>CPU Usage</h2>
+            <canvas id="cpuChart"></canvas>
+            <button class="more-button" onclick="showModal('cpu')">More</button> <!-- Existing button for modal -->
+            <button class="details-button" onclick="window.location.href='/cpu-details.html'">CPU Details</button> <!-- New button for details -->
+        </div>
+
+        <!-- GPU Usage Chart -->
+        <div class="chart-container">
+            <h2>GPU Usage</h2>
+            <canvas id="gpuChart"></canvas> <!-- Placeholder for GPU chart -->
+            <button class="more-button" onclick="showModal('gpu')">More</button> <!-- Button to open modal -->
+            <button class="details-button" onclick="window.location.href='/gpu-details.html'">GPU Details</button> <!-- New button for details -->
+        </div>
+
+        <!-- RAM Usage Chart -->
+        <div class="chart-container">
+            <h2>RAM Usage</h2>
+            <canvas id="ramChart"></canvas>
+            <button class="more-button" onclick="showModal('ram')">More</button>
+        </div>
+
+        <!-- List for top 5 largest apps -->
+        <div class="list-container">
+            <h2>Top 5 Largest Apps</h2>
+            <ul id="largestAppsList">
+                <li>Loading...</li> <!-- Placeholder content, updated dynamically -->
+            </ul>
+        </div>
+
+        <!-- List for top 5 largest downloads -->
+        <div class="list-container">
+            <h2>Top 5 Largest Downloads</h2>
+            <ul id="largestDownloadsList">
+                <li>Loading...</li> <!-- Placeholder content, updated dynamically -->
+            </ul>
+        </div>
+
+        <!-- List for top 5 largest documents -->
+        <div class="list-container">
+            <h2>Top 5 Largest Documents</h2>
+            <ul id="largestDocumentsList">
+                <li>Loading...</li> <!-- Placeholder content, updated dynamically -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal for displaying more details -->
+    <div class="modal" id="infoModal">
+        <h3 id="modalTitle"></h3> <!-- Dynamic title for modal -->
+        <p id="modalContent"></p> <!-- Dynamic content for modal -->
+        <button class="close-button" onclick="closeModal()">Close</button> <!-- Button to close modal -->
+    </div>
+
+    <!-- External JavaScript file for functionality -->
+    <script src="business-owner.js"></script>
+</body>
+</html>

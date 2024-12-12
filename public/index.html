@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta information for character encoding and responsiveness -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Role Selection</title>
+
+    <style>
+        /* Styling for the body: full-screen layout with center alignment */
+        body {
+            font-family: Arial, sans-serif; /* Default font */
+            margin: 0;
+            padding: 0;
+            background-color: #0f2040; /* Dark blue background for contrast */
+            color: #ffffff; /* White text for readability */
+            display: flex; /* Flexbox layout for centering content */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Full viewport height */
+        }
+
+        /* Main container for the page content */
+        .container {
+            text-align: center; /* Center align all text */
+            width: 100%; /* Full width */
+            max-width: 1200px; /* Limit maximum width */
+        }
+
+        /* Styling for the main title */
+        h1 {
+            font-size: 5em; /* Large font size */
+            margin-bottom: 100px; /* Spacing below the title */
+        }
+
+        /* Layout for the row of buttons */
+        .button-row {
+            display: flex; /* Flexbox layout for the buttons */
+            justify-content: center; /* Center the buttons horizontally */
+            gap: 15px; /* Space between buttons */
+        }
+
+        /* Common styling for all buttons */
+        .button {
+            flex: 1; /* Make buttons flexible to fit available space */
+            background-color: #0066CC; /* Blue background */
+            color: white; /* White text for contrast */
+            padding: 30px 20px; /* Inner padding for content spacing */
+            text-align: center; /* Center text and image */
+            text-decoration: none; /* Remove underline from links */
+            font-size: 2.5em; /* Large text size */
+            border-radius: 10px; /* Rounded corners for modern design */
+            transition: transform 0.2s, background-color 0.2s; /* Smooth hover animation */
+            cursor: pointer; /* Pointer cursor for interactivity */
+            border: none; /* Remove border */
+            display: flex; /* Flexbox for content alignment */
+            flex-direction: column; /* Stack text and image vertically */
+            align-items: center; /* Center align items horizontally */
+            justify-content: center; /* Center align items vertically */
+            height: 400px; /* Fixed height for buttons */
+        }
+
+        /* Styling for images inside buttons */
+        .button img {
+            width: 300px; /* Fixed image width */
+            height: 300px; /* Fixed image height */
+            margin-top: 20px; /* Space above the image */
+        }
+
+        /* Styling for the text inside buttons */
+        .button span {
+            display: block; /* Ensure the text is on a separate line */
+            margin-top: 20px; /* Space above the text */
+        }
+
+        /* Hover effect for buttons */
+        .button:hover {
+            background-color: #45a049; /* Change background color to green */
+            transform: scale(1.05); /* Slightly enlarge the button */
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .button-row {
+                flex-direction: column; /* Stack buttons vertically */
+            }
+
+            .button {
+                height: auto; /* Allow buttons to adjust height */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main content container -->
+    <div class="container">
+        <!-- Page title -->
+        <h1>Select Role that Applies</h1>
+        
+        <!-- Row of buttons for role selection -->
+        <div class="button-row">
+            <!-- Button for Everyday User -->
+            <a href="/everyday-user.html" class="button">
+                <span>Everyday User</span> <!-- Button text -->
+                <img src="Everyday User.png" alt="Everyday User" /> <!-- Image representing the role -->
+            </a>
+
+            <!-- Button for Engineers and Developers -->
+            <a href="/engineers-and-developers.html" class="button">
+                <span>Engineers and Developers</span> <!-- Button text -->
+                <img src="Engineer Logo.png" alt="Engineers and Developers" /> <!-- Image representing the role -->
+            </a>
+
+            <!-- Button for Business Owner / Content Creator -->
+            <a href="/business-owner.html" class="button">
+                <span>Business Owner / Content Creator</span> <!-- Button text -->
+                <img src="Owner.png" alt="Business Owner / Content Creator" /> <!-- Image representing the role -->
+            </a>
+        </div>
+    </div>
+</body>
+</html>

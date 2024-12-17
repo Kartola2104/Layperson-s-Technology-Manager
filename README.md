@@ -11,7 +11,8 @@ Joseph Hall/Github Username: jhall773
   * Researched and created a template for the RAM and CPU "per process" information and the SQL querries used by the javascript and html user interface.
 
 Kevin Artola/Github Username: Kartola2104
-  * Responsible for most if not all of the javascript/html files used in the user interface, including the javascript server, and the javascript charts and graphs.
+  * Responsible for most if not all of the javascript/html files used in the user interface, including the javascript server, the javascript charts and graphs,
+    and nearly all of the implementation for the files found in the "public" folder.
   * Also responsible for the code structure of the Node.js server enviornment.
 
 Izak DeLaCruz/Github Username: izakeeesock03 
